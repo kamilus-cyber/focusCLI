@@ -1,0 +1,28 @@
+google:
+  credentials_file: focus_cli.json   # your downloaded OAuth file
+  token_file: token.json             # auto-created on first auth
+
+twilio:
+  account_sid: 
+  auth_token:  
+  from_number:                       # your Twilio number
+  to_number:                         # YOUR personal phone (WhatsApp)
+  use_whatsapp: false                # set true once whatsapp-mcp is running
+
+whatsapp:
+  db_path: ~/whatsapp-mcp-extended/whatsapp-bridge/store/messages.db
+  my_number:                         # leave empty to auto-detect, or set e.g. ""
+  scan_group_messages: false # set true to also scan group chats (noisier)
+
+scanner:
+  interval_minutes: 60
+  gmail_labels: []
+  calendar_days_ahead: 7
+  max_emails_per_scan: 20
+
+reminders:
+  check_interval_minutes: 30
+  escalation_hours: [2, 24, 72]    # tier 1→2→3→4 thresholds
+  sarcasm_baseline: 2              # 1=mild 2=medium 3=chaos
+  quiet_hours_start: 23            # no reminders after 11pm
+  quiet_hours_end: 8               # no reminders before 8am
